@@ -497,6 +497,9 @@ function Weapon GetDamageWeapon(Pawn Other, class<DamageType> DamageType)
 	local class<Weapon> WClass;
 	local Inventory Inv;
     
+	if (Other.IsA('Vehicle') && Vehicle(Other).Driver == None)	// Things like auto-turrets
+		return None;
+
 	if(ClassIsChildOf(DamageType, class'WeaponDamageType'))
 	{
         if(Other.IsA('Vehicle')) {

@@ -327,7 +327,7 @@ simulated function Tick(float Delta)
     if(bPendingDelete)
     {
         die() ;
-        bPendingDelete = false ;
+        //bPendingDelete = false ;   //piglet - this is a const
     }
     if(bInactive && bInactivityReset && !bWaitTillMove)
     {
